@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <link rel="stylesheet"  type="text/css" href="homepage.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Shopping Cart ckstore</title>
+    </head>
+    <body>
+        <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="extraimages/logo.jpg" alt="CKSTORE" width="75px" height="35px">
+                </div>
+   
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contacts</a></li>
+                    </ul>
+                </nav>
+                <img src="extraimages/cart.jpg" width="30px" height="30px" class="cartBtn">
+            </div>
+        
+        </div>   
+    </div>
+   
+    <!--Cart Items Details-->
+    <div class="smallcontainer cartpage">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Sub Total</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cartinfo">
+                        <img src="shoes for girls/girl45.jpg" >
+                    </div>
+                    <div>
+                        <p>Orrange Color Sport Shoe</p>
+                        <small>Price:$</small>
+                        <small id="price">25.00</small><br>
+                        <a href="">Remove</a>
+                    </div>
+
+                </td>
+                <td><input type="number" value="1" id="quantity" onkeyup="getSubTot()"></td>
+                <td id="subtot"></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cartinfo">
+                        <img src="shoes for girls/girl37.jpg" >
+                    </div>
+                    <div>
+                        <p>Meroon Normal Heals Court Shoe</p>
+                        <small>Price:$</small>
+                        <small id="price">20.00</small><br>
+                        <a href="">Remove</a>
+                    </div>
+
+                </td>
+                <td><input type="number" value="1" id="quantity" onkeyup="getSubTot()"></td>
+                <td id="subtot"></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cartinfo">
+                        <img src="slippers for boys/boy57.jpg" >
+                    </div>
+                    <div>
+                        <p>Black Color Office Shoe</p>
+                        <small>Price:$</small>
+                        <small id="price">22.00</small><br>
+                        <a href="">Remove</a>
+                    </div>
+
+                </td>
+                <td><input type="number" value="1" id="quantity" onkeyup="getSubTot()"></td>
+                <td id="subtot"></td>
+            </tr>
+            <tr><td><a href="" class="clearcart" style="display: inline-block;
+                background-color: #ff523b;
+                color: #fff;
+                padding: 8px 30px;
+                margin: 30px 0;
+                border-radius: 30px;
+                transition: background 0.5s;">Clear Cart</a></td></tr>
+                <td><a href="shipping.html" class="btn"> Bye Now</a></td>
+        </table>
+        <div class="totalprice">
+            <table>
+                <tr>
+                    <td>Sub Total</td>
+                    <td class="carttot">$67.00</td>
+
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>$30.00</td>
+                    
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$97.00</td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    
+    
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+               <div class="footetcol1">
+                   <h3>Download Our App</h3>
+                   <p>Download app for Adroid and IOS Mobile Phone.</p>
+                   <div class="applogo">
+                       <img src="extraimages/play.jpg">
+                       <img src="extraimages/app.jpg">
+                   </div>
+               </div>
+               <div class="footetcol2">
+                <img src="extraimages/logo.jpg">
+                <p>Our Purpose is give the comfartable and Reliable service to every Costomers.</p>
+            </div>
+            <div class="footetcol3">
+                <h3>Follow Us</h3>
+                <Ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Intagram</li>
+                    <li>YouTube</li>
+                </Ul>
+            </div>
+            </div>
+            <hr>
+             <p class="copyright">Copyright - 2020 CKSTORES</p>
+        </div>
+    </div>
+    <script>
+        
+        function getSubTot(){
+            var itemPrice= document.getElementById("price").value;
+            var amount= document.getElementById("quantity").value;
+             
+
+            document.getElementById("subtot").innerHTML=parseInt(itemPrice)*parseInt(amount);
+        }
+    </script>
+    </body>
+</html>
