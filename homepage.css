@@ -287,3 +287,12 @@ margin: 80px auto;
     th:last-child{
         text-align: right;
     }
+    /*shiiping details*/
+    .shipping{
+        width: 100px;
+        height: 20px;
+    }
+    .radio{
+        width: 10px;
+        height: 10px;
+    }
