@@ -1,5 +1,7 @@
 <html>
     <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"  type="text/css" href="homepage.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>product details ckstore</title>
@@ -9,7 +11,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="extraimages/logo.jpg" alt="CKSTORE" width="75px" height="35px">
+                   <a href="homepage.html"> <img src="extraimages/logo.jpg" alt="CKSTORE" width="75px" height="35px"></a>
                 </div>
    
                 <nav>
@@ -20,7 +22,8 @@
                         <li><a href="">Contacts</a></li>
                     </ul>
                 </nav>
-                <img src="extraimages/cart.jpg" width="30px" height="30px" class="cartBtn">
+                <img src="extraimages/icons8-shopping-cart-24.png" width="30px" height="30px" class="cartBtn">
+                <img src="extraimages/icons8-menu-48.png" width="30px" height="30px" class="menue-icon" onclick="menutogle()">
             </div>
         
         </div>  
@@ -45,7 +48,7 @@
                 <option >8</option>
             </select><br>
             <input type="number" value="1">
-            <a href="cart.html" class="btn"> Add To Cart</a>
+            <a href="cart.html" class="btn add-cart"> Add To Cart</a>
 
             <h3>Product Details</h3><br>
             <p>This Shoe is comfortable, reliable shoe. And it recomended for any age range of the girl. And it can  use for sports, casual situations.</p>
@@ -153,5 +156,19 @@
              <p class="copyright">Copyright - 2020 CKSTORES</p>
         </div>
     </div>
+    <!-- js for toglemenue -->
+    <script>
+        var menueItem=document.getElementById("menueItem");
+        menueItem.style.maxHeight="0px";
+
+        function menutogle(){
+            if (menueItem.style.maxHeight=="0px"){
+                menueItem.style.maxHeight="200px";
+            }
+            else{
+                menueItem.style.maxHeight="0px";
+            }
+        }
+    </script>
     </body>
 </html>

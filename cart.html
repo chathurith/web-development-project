@@ -1,7 +1,10 @@
 <html>
     <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"  type="text/css" href="homepage.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <title>Shopping Cart ckstore</title>
     </head>
     <body>
@@ -9,7 +12,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="extraimages/logo.jpg" alt="CKSTORE" width="75px" height="35px">
+                  <a href="homepage.html">  <img src="extraimages/logo.jpg" alt="CKSTORE" width="75px" height="35px"></a>
                 </div>
    
                 <nav>
@@ -20,13 +23,15 @@
                         <li><a href="">Contacts</a></li>
                     </ul>
                 </nav>
-                <img src="extraimages/cart.jpg" width="30px" height="30px" class="cartBtn">
+                <img src="extraimages/icons8-shopping-cart-24.png" width="30px" height="30px" class="cartBtn">
+                <img src="extraimages/icons8-menu-48.png" width="30px" height="30px" class="menue-icon" onclick="menutogle()">
             </div>
         
         </div>   
     </div>
    
     <!--Cart Items Details-->
+   
     <div class="smallcontainer cartpage">
         <table>
             <tr>
@@ -147,6 +152,20 @@
              <p class="copyright">Copyright - 2020 CKSTORES</p>
         </div>
     </div>
-    
+    <!-- js for toglemenue -->
+    <script>
+        var menueItem=document.getElementById("menueItem");
+        menueItem.style.maxHeight="0px";
+
+        function menutogle(){
+            if (menueItem.style.maxHeight=="0px"){
+                menueItem.style.maxHeight="200px";
+            }
+            else{
+                menueItem.style.maxHeight="0px";
+            }
+        }
+    </script>
+     <script src="cart.js"></script>
     </body>
 </html>

@@ -1,6 +1,10 @@
 <html>
     <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"  type="text/css" href="homepage.css">
+        <link rel="stylesheet"  type="text/css" href="shipping.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Shopping Cart ckstore</title>
     </head>
@@ -9,7 +13,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="extraimages/logo.jpg" alt="CKSTORE" width="75px" height="35px">
+                   <a href="homepage.html"> <img src="extraimages/logo.jpg" alt="CKSTORE" width="75px" height="35px"></a>
                 </div>
    
                 <nav>
@@ -20,51 +24,92 @@
                         <li><a href="">Contacts</a></li>
                     </ul>
                 </nav>
-                <img src="extraimages/cart.jpg" width="30px" height="30px" class="cartBtn">
+                <img src="extraimages/icons8-shopping-cart-24.png" width="30px" height="30px" class="cartBtn">
+                <img src="extraimages/icons8-menu-48.png" width="30px" height="30px" class="menue-icon" onclick="menutogle()">
             </div>
         
         </div>   
     </div>
    
     <!--Shipping details-->
-    <form method="POST">
-        <h2>Shipping Address</h2>
-        <table style="width: 48%; height: 10%; ; ">
-            <tr>
-                <td>First Name<br><input type="text" value="ed" width="40px" class="shipping"></td>
-                <td>Last Name<br><input type="text" value="Scott" class="shipping"></td><td></td>
-            </tr>
-            <tr>
-                <td>Address Line 1<br><input type="text" class="shipping"></td>
-                <td>Address Line 2<br><input type="text" class="shipping" ></td><td></td>
-            </tr>
-            <tr>
-                <td>City<br><input type="text"  class="shipping"></td>
-                <td>State<br><input type="text" class="shipping"> </td>
-               <td>Zip<br><input type="text" class="shipping"> </td>
-                
-            </tr>
-            <tr>
-                <td>Phone Number<br><input type="text" class="shipping"><br>For Shipping related questions only</td><td></td><td></td>
-            </tr>
-        </table>
-        <hr>
-      <p>Use this address as my billing address?</p>Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="choose" class="radio">No&nbsp;&nbsp;&nbsp;<input type="radio" name="choose" class="radio">
-      <br>
-      <h2>Payment Method</h2>
-      <table style="width: 48%; height: 10%;  ">
-          <tr>
-              <td>Name On Card<br><input type="text" class="shipping"></td>
-              <td>Card Number<br><input type="text" class="shipping"></td><td></td>
-          </tr>
-          <tr>
-              <td>Expiration<br><input type="text" class="shipping"></td>
-              <td>CVV <br><input type="text" class="shipping"></td><td></td>
-          </tr>
-      </table>
-    </form>
-    
+    <h2>Responsive Checkout Form</h2>
 
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      <hr>
+      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+    </div>
+  </div>
+</div>
 
 
     
@@ -99,6 +144,19 @@
              <p class="copyright">Copyright - 2020 CKSTORES</p>
         </div>
     </div>
-    
+    <!-- js for toglemenue -->
+    <script>
+        var menueItem=document.getElementById("menueItem");
+        menueItem.style.maxHeight="0px";
+
+        function menutogle(){
+            if (menueItem.style.maxHeight=="0px"){
+                menueItem.style.maxHeight="200px";
+            }
+            else{
+                menueItem.style.maxHeight="0px";
+            }
+        }
+    </script>
     </body>
 </html>

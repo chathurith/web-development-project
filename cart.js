@@ -76,7 +76,7 @@ class UI{
         
         //console.log(products);
         productsDom.innerHTML=result;
-        getCartButton(){
+        getCartButton();{
             const addcartButton = [...document.querySelector(".btn")]; 
             CartButtonsDom=addcartButton;
            // console.log(addcartButton);
@@ -105,6 +105,7 @@ class UI{
                        //display cart item
                        this.addCartItem(cartItems);
                        //show the cart
+                       this.showCart();
 
 
                    })
@@ -127,9 +128,39 @@ class UI{
     }
     addCartItem(item){
         const div = document.createElement('div');
-        div.classList.add('cartinfo')
-    }
+        div.classList.add('smallcontainer');
+        div.innerHTML=`
+        <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cartinfo">
+                    <img src=${item.image} >
+                </div>
+                <div>
+                    <p>${item.title}</p>
+                    <small>Price:$${item.price}</small>
+                    <br>
+                    <a href="" data id=${item.id}>Remove</a>
+                </div>
+
+            </td>
+            <td><input type="number" value="1" id="quantity" onkeyup="getSubTot()"></td>
+            <td id="subtot"></td>
+        </tr>
+        </table>
+        `
+        cartContent.appendChild(div);
 }
+showCart(){
+    productsDom.classList.add('row');
+}
+    }
+    
 
 //Local Storage
 class storage{
