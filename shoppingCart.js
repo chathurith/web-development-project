@@ -82,4 +82,65 @@ function totalCost(product) {
   }
 
 
+  function displayCart() {
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+    let productContainer = document.querySelector(".cartpage");
+    let cartCost = localStorage.getItem("totalCost");
   
+    console.log(cartItems);
+    if (cartItems && productContainer) {
+      productContainer.innerHTML = "";
+      Object.values(cartItems).map((item) => {
+        productContainer.innerHTML += `
+        <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cartinfo">
+                    <img src="shoes/${item.id}.jpg ">
+                </div>
+                <div>
+                    <p>${item.name}</p>
+                    <small>Price:$${item.price}</small>
+                    <br>
+                    <a href="" data id=${item.id}>Remove</a>
+                </div>
+
+            </td>
+            <td><input type="number" value="1" id="quantity""></td>
+            <td id="subtot">$${item.inCart * item.price}</td>
+        </tr>
+        </table>
+        `;
+      });
+      let totalContainer = document.querySelector(".totalprice");
+      totalContainer.innerHTML += `
+      <table>
+      <tr>
+          <td>Sub Total</td>
+          <td class="carttot">$${cartCost}</td>
+
+      </tr>
+      <tr>
+          <td>Tax (10%)</td>
+          <td>$${cartCost * 0.1}</td>
+          
+      </tr>
+      <tr>
+          <td>Total</td>
+          <td>$${cartCost + (cartCost * 0.1)}</td>
+          
+      </tr>
+  </table>
+  
+      `;
+    }
+  }
+  onLoadCartNumbers();
+
+  displayCart();              
